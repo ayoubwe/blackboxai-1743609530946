@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAI - Saudi Company for Artificial Intelligence</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="min-h-screen relative">
+    <!-- Background Animation -->
+    <div id="particles-background" class="fixed inset-0 z-0">
+        <div id="particles-js"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0">
+        <div class="nav-container">
+            <div class="relative flex items-center justify-between">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <img src="assets/images/logo 2 msti.png" alt="SCAI Logo">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-menu hidden lg:flex items-center space-x-8">
+                    <a href="#about" class="nav-link group">
+                        <span class="relative">
+                            About
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#sectors" class="nav-link group">
+                        <span class="relative">
+                            Sectors
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#products" class="nav-link group">
+                        <span class="relative">
+                            Products
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#partnerships" class="nav-link group">
+                        <span class="relative">
+                            Partnerships
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                </div>
+                <button class="btn-primary btn-glow nav-button rounded-full text-white hover:opacity-90 transition-opacity hidden lg:block">
+                    Donate
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden nav-toggle" id="menu-toggle">
+                    <span class="sr-only">Open menu</span>
+                    <div class="nav-toggle-bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-[#0a0a29]/95 backdrop-blur-lg transform translate-x-full z-50 lg:hidden">
+        <div class="p-6">
+            <div class="flex flex-col space-y-6 mt-16">
+                <a href="#about" class="nav-link group">
+                    <span class="relative text-lg">
+                        About
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#sectors" class="nav-link group">
+                    <span class="relative text-lg">
+                        Sectors
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#products" class="nav-link group">
+                    <span class="relative text-lg">
+                        Products
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#partnerships" class="nav-link group">
+                    <span class="relative text-lg">
+                        Partnerships
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <button class="btn-primary btn-glow nav-button rounded-full text-white hover:opacity-90 transition-opacity mt-6">
+                    Donate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden hero-bg">
+        <div class="absolute inset-0 gradient-overlay z-10"></div>
+        <div class="container mx-auto px-6 relative z-20 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-down" data-aos-delay="200">
+                <span class="text-gradient-animate">Ahead of The Game</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                A groundbreaking AI-powered ecosystem designed to revolutionize the sports landscape in Saudi Arabia.
+            </p>
+            <button class="btn-primary btn-hover btn-glow px-8 py-3 rounded-full text-white font-semibold transition-all transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 section-transition" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">About SCAI</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed text-gray-300">
+                        SCAI is wholly owned by the Public Investment Fund (PIF) and serves as a national AI champion in the kingdom, offering end-to-end cutting-edge AI and emerging technologies solutions across various domains.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-300 mt-6">
+                        With a vision to lead the next generation of AI applications and unlock global value, SCAI is committed to shaping the future of AI through best in class partnerships, targeted investments and strategic capabilities addressing market gaps globally.
+                    </p>
+                    <button class="btn-primary btn-glow px-6 py-3 rounded-full text-white font-semibold mt-8 hover:opacity-90 transition-opacity">
+                        Learn More
+                    </button>
+                </div>
+                <div class="relative h-96 bg-gradient-primary rounded-lg overflow-hidden animate-float" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Placeholder for about section image/animation -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sectors -->
+    <section id="sectors" class="py-20 bg-[#0a0a35] section-transition" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Featured Sectors</h2>
+            <div class="relative">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-[#0a0a29] p-8 rounded-lg card card-hover" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold mb-4">Smart Cities</h3>
+                        <p class="text-gray-300 mb-6">
+                            We provide human-centric AI solutions that focus on fostering communities across a wide variety of sectors and enhancing their quality of life.
+                        </p>
+                        <button class="border border-purple-500 px-6 py-2 rounded-full text-purple-500 hover:bg-purple-500 hover:text-white transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 section-transition" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Our Products</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#0a0a35] p-8 rounded-lg card-hover">
+                    <div class="text-purple-500 text-lg font-semibold mb-2">SMART CITIES</div>
+                    <h3 class="text-2xl font-bold mb-4">SCAI Monitor</h3>
+                    <p class="text-gray-300 mb-6">
+                        AI-powered solution that leverages computer vision technologies and smart analytics to enhance public safety and urban security.
+                    </p>
+                    <button class="btn-primary btn-glow px-6 py-2 rounded-full text-white hover:opacity-90 transition-opacity">
+                        Learn More
+                    </button>
+                </div>
+                <div class="bg-[#0a0a35] p-8 rounded-lg card-hover">
+                    <div class="text-purple-500 text-lg font-semibold mb-2">SMART CITIES</div>
+                    <h3 class="text-2xl font-bold mb-4">SCAI Motion</h3>
+                    <p class="text-gray-300 mb-6">
+                        Streamline traffic flow and manage large crowds efficiently through cutting-edge AI and computer vision.
+                    </p>
+                    <button class="btn-primary btn-glow px-6 py-2 rounded-full text-white hover:opacity-90 transition-opacity">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section id="partnerships" class="py-20 bg-[#0a0a35] section-transition" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold">Partnerships</h2>
+                <button class="border border-white px-6 py-2 rounded-full text-white hover:bg-white hover:text-[#0a0a29] transition-colors">
+                    Explore All
+                </button>
+            </div>
+            <p class="text-lg text-gray-300 max-w-2xl">
+                At SCAI, we proudly collaborate with industry leaders, organizations, and technology experts to fuel innovation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#0a0a29]">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="footer-logo">
+                    <img src="assets/images/logo 2 msti.png" alt="SCAI Logo">
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="script.js" defer></script>
+    <script>
+        // Initialize features when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: false,
+                mirror: true
+            });
+
+            // Initialize Particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 50 },
+                    color: { value: ['#6366f1', '#8b5cf6', '#2563eb'] },
+                    shape: { type: 'circle' },
+                    opacity: {
+                        value: 0.3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 2,
+                        random: true
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#8b5cf6',
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: 'none',
+                        random: true,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 0.4
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Handle loading screen
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.style.opacity = '0';
+                setTimeout(() => loading.remove(), 500);
+            }, 1000);
+
+            // Handle scroll progress bar
+            const progressBar = document.querySelector('.scroll-progress');
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.transform = `scaleX(${scrolled / 100})`;
+            });
+
+            // Handle navigation scroll effect
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Add scroll-triggered animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.section-transition').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
